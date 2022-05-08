@@ -95,7 +95,7 @@ if (composite == False):
         count += 1
 if (composite == False):
     five = stepcinco(n,r)
-    if(fove == 'composite'):
+    if(five == 'composite'):
         composite = True
     else:
         count += 1
