@@ -9,7 +9,6 @@ def stepuno(n):
                 return 'composite'
     return
 
-##upper bounds fixed is faster than updating them each time (?)
 
 def stepdos(n):
     count = 0
@@ -32,7 +31,7 @@ def stepcuatro(n,r):
     if n <= r:
         return 'prime'
 
-##runs in nlog(n) since n numbers to check and gcd alg. is log(n)
+
 def stepcinco(n,r):
     for a in range(1,int(totient(n)**0.5 * math.log(n,2))):
         left_hand_side = np.poly1d([1,a])**n
@@ -45,10 +44,6 @@ def stepcinco(n,r):
 
 
   
-#first upper bound is lemma 3.1 in primes paper
-# second upper bound still need to understand
-# this is the r that we want since Ord_r(n) is n^k = 1 mod(r)
-# if we don't find it then the multiplcative order is great than log_2(n)^2
 
 n = 69 #composite
 
