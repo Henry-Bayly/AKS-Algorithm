@@ -61,14 +61,14 @@ def stepcinco(n,r):
         quotientLHS, remainderLHS = np.polydiv(left_hand_side, divisor)
         quotientRHS, remainderRHS = np.polydiv(right_hand_side, divisor)
         print("Checking if a = ", a, " satisfies the stated property.")
-        if(np.all(np.polysub(np.array(remainderLHS)%n,np.array(remainderRHS)%n) != 0)):
+        if(np.all(np.polysub(np.array(remainderLHS)%n,np.array(right_hand_side)) != 0)):
             print("The given value of a fails. Therefore n is composite.")
             return 'composite'
 
 
   
 
-n = 69 #composite
+n =  10793 #composite
 stepcount = 0
 composite = False
 outputs = []
@@ -79,8 +79,8 @@ if(one == 'composite'):
     composite = True
 else:
     count += 1
-
-r = stepdos(n)
+if (composite == False):
+    r = stepdos(n)
 if (composite == False):
     three = steptres(r,n)
     if(three == 'composite'):
@@ -103,15 +103,14 @@ if (composite == False):
 
 if count == 4:
     print('the number is prime')
+elif count == 0:
+    print("the number is composite. it failed step 1")
 else:
     print('the number is composite. it failed step ', count+2)
-
-
     
 
 
-
-
+    
 
 
 
